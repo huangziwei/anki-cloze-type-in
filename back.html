@@ -1,0 +1,49 @@
+{{cloze:Sentence}}
+
+<br /><br />
+
+<div class="definition">
+    <span class="cefr {{CEFR}}">{{CEFR}}</span> {{Definition}}
+</div>
+<br />
+
+{{type:Word}}
+
+<br />
+
+<button id="translateButton">Translate</button>
+<div id="translation" style="display: none;">{{Translation}}</div>
+
+{{#Note}}
+<button id="noteButton">Note</button>
+<div id="note" style="display: none;">{{Note}}</div>
+{{/Note}}
+
+<div id="content" style="display: none;"></div>
+
+<script>
+    var contentDiv = document.getElementById('content');
+
+    function setContent(contentId, alignment) {
+        var contentElement = document.getElementById(contentId);
+        contentDiv.innerHTML = contentElement.innerHTML;
+        contentDiv.style.display = 'block';
+        contentDiv.style.textAlign = alignment;
+    }
+
+    var translateButton = document.getElementById('translateButton');
+    var noteButton = document.getElementById('noteButton');
+
+
+    if (translateButton) {
+        translateButton.onclick = function () {
+            setContent('translation', 'center');
+        };
+    }
+
+    if (noteButton) {
+        noteButton.onclick = function () {
+            setContent('note', 'left');
+        };
+    }
+</script>

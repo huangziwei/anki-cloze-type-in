@@ -1,0 +1,38 @@
+{{cloze:Sentence}}
+
+<br /><br />
+
+<div class="definition">
+    <span class="cefr {{CEFR}}">{{CEFR}}</span> {{Definition}}
+</div>
+
+<br />
+
+{{type:cloze:Sentence}}
+
+<br />
+
+<button id="translateButton">Translate</button>
+<div id="translation" class="translation" style="display: none;">{{Translation}}</div>
+
+<script>
+
+    document.getElementById('translateButton').onclick = function () {
+        var translation = document.getElementById('translation');
+        translation.style.display = (translation.style.display == 'none') ? 'block' : 'none';
+    };
+
+    var typeInput = document.querySelector('input[type="text"]');
+    var answerLength = "{{Word}}".length;
+    typeInput.style.width = answerLength + "ch";
+
+    typeInput.addEventListener('input', function (e) {
+        var typed = e.target.value;
+        var answer = "{{cloze:Sentence}}";
+
+        if (typed.toLowerCase() === answer.toLowerCase()) {
+            e.target.value = answer;
+        }
+    });
+
+</script>

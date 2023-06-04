@@ -1,0 +1,108 @@
+.cefr {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.A1 {
+    background-color: #4D8C57;
+}
+
+.A2 {
+    background-color: #78A161;
+}
+
+.B1 {
+    background-color: #A3B56B;
+}
+
+.B2 {
+    background-color: #CDCA74;
+}
+
+.C1 {
+    background-color: #F8DE7E;
+}
+
+.C2 {
+    background-color: #f58f00;
+}
+
+.card {
+    font-family: arial;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-color: white;
+}
+
+
+.cloze {
+    font-weight: bold;
+    color: blue;
+}
+
+.nightMode .cloze {
+    color: lightblue;
+}
+
+.definition {
+    font-size: 0.8em;
+    /* adjust this value as needed */
+}
+
+
+#content {
+    line-height: 1;
+    font-size: 0.8em;
+}
+
+/* Light Mode */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:first-child th {
+    border-top: none;
+}
+
+/* Dark Mode */
+.nightMode table {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+.nightMode th,
+.nightMode td {
+    border-color: #555;
+}
+
+.nightMode th {
+    background-color: #222;
+}
+
+.nightMode tr:nth-child(even) {
+    background-color: #444;
+}
+
+.nightMode tr:first-child th {
+    border-top: none;
+}
