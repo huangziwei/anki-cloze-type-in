@@ -44,6 +44,7 @@ You can personalize the appearance of your Anki cards by editing the HTML templa
 
 I am working on a few decks for German language learning. The data sources are: 
 
-1. Goethe Zertifikat Wortliste A1, A2, and B1;
-1. [German Top 10000 Most Common Words](https://mostusedwords.com/products/4-german-frequency-dictionaries-set-top-10000-most-common-german-words). 
-2. Goethe Z]
+1. Goethe Zertifikat Wortliste 
+    - [A1](https://www.goethe.de/pro/relaunch/prf/de/A1_SD1_Wortliste_02.pdf)
+    - [A2](https://www.goethe.de/pro/relaunch/prf/en/Goethe-Zertifikat_A2_Wortliste.pdf) 
+    - [B1](https://www.goethe.de/pro/relaunch/prf/en/Goethe-Zertifikat_B1_Wortliste.pdf)

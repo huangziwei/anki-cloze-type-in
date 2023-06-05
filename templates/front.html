@@ -1,21 +1,30 @@
-{{cloze:Sentence}}
-
-<br /><br />
-
-<div class="definition">
-    <span class="cefr {{CEFR}}">{{CEFR}}</span> {{Definition}}
-</div>
-
-<br />
+<div class="mobile-only">{{cloze:Sentence}}</div>
 
 {{type:cloze:Sentence}}
 
+<br /> <br />
+
+<div class="definition">
+    <span id="cefrSpan" class="cefr {{CEFR}}">{{CEFR}}</span> {{POS}}: {{Definition}}
+</div>
 <br />
 
 <button id="translateButton">Translate</button>
 <div id="translation" class="translation" style="display: none;">{{Translation}}</div>
 
 <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var cefrSpan = document.getElementById('cefrSpan');
+        if (cefrSpan.className.includes("B1+")) {
+            cefrSpan.className = cefrSpan.className.replace("B1+", "B1plus");
+        }
+
+        // Hide clozeSentence div if not mobile
+        if (!isMobile()) {
+            document.getElementById('clozeSentence').style.display = 'none';
+        }
+    });
 
     document.getElementById('translateButton').onclick = function () {
         var translation = document.getElementById('translation');

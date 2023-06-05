@@ -1,6 +1,7 @@
 .cefr {
     border-radius: 10px;
     padding: 5px;
+
 }
 
 .A1 {
@@ -15,16 +16,8 @@
     background-color: #A3B56B;
 }
 
-.B2 {
-    background-color: #CDCA74;
-}
-
-.C1 {
-    background-color: #F8DE7E;
-}
-
-.C2 {
-    background-color: #f58f00;
+.B1\+ {
+    background-color: #ffd60a;
 }
 
 .card {
@@ -105,4 +98,12 @@ tr:first-child th {
 
 .nightMode tr:first-child th {
     border-top: none;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.mobile .mobile-only {
+    display: block;
 }
