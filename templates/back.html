@@ -34,13 +34,14 @@
     var translateButton = document.getElementById('translateButton');
     var noteButton = document.getElementById('noteButton');
 
-
+    // When the translate button is clicked, display the translation.
     if (translateButton) {
         translateButton.onclick = function () {
             setContent('translation', 'center');
         };
     }
 
+    // When the note button is clicked, display the note.
     if (noteButton) {
         noteButton.onclick = function () {
             setContent('note', 'left');

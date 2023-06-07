@@ -1,3 +1,4 @@
+import re
 import sys
 
 import pandas as pd
@@ -7,7 +8,9 @@ import pandas as pd
 def apply_cloze(sentence, gloze):
     parts = gloze.split()
     for part in parts:
-        sentence = sentence.replace(part, "{{c1::" + part + "}}")
+        sentence = re.sub(
+            f"(?i)\\b{part}\\b", lambda match: "{{c1::" + match.group() + "}}", sentence
+        )
     return sentence
 
 
@@ -19,7 +22,7 @@ df = df.dropna(subset=["Sentence"])
 
 # Wrap the Gloze word with {{c1::}} in the Sentence field
 df["Sentence"] = df.apply(
-    lambda row: apply_cloze(row["Sentence"], row["Gloze"]),
+    lambda row: apply_cloze(row["Sentence"], row["Cloze"]),
     axis=1,
 )
 

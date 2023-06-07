@@ -23,7 +23,7 @@ Check out the [raw data](./raw/german_10000_reverse.csv) for an example.
 First, preprocess the raw CSV file:
 
 ```shell
-python ./raw/preprocess.py ./pre/input.csv
+python ./scripts/preprocess.py ./raw/input.csv ./pre/output.csv
 ```
 
 This will generate a new CSV file named "input_preproc.csv", where specified words in each sentence are wrapped with the cloze deletion syntax.
@@ -31,10 +31,10 @@ This will generate a new CSV file named "input_preproc.csv", where specified wor
 Next, generate the Anki deck:
 
 ```shell
-python build_deck.py ./pre/input_preproc.csv
+python ./scripts/build_deck.py ./pre/output.csv output 
 ```
 
-This will create an Anki deck named "input_preproc.apkg" in `decks/` that can be imported into Anki.
+This will create an Anki deck named "output.apkg" in `decks/` that can be imported into Anki.
 
 ## Customization
 
