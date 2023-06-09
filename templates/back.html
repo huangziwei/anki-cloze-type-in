@@ -3,7 +3,7 @@
 <br /><br />
 
 <div class="definition">
-    <span class="cefr {{CEFR}}">{{CEFR}}</span> {{POS}}: {{Definition}}
+    <span id="cefrSpan" class="cefr {{CEFR}}">{{CEFR}}</span> {{POS}}: {{Definition}}
 </div>
 <br />
 
@@ -22,19 +22,30 @@
 <div id="content" style="display: none;"></div>
 
 <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var cefrSpan = document.getElementById('cefrSpan');
+        if (cefrSpan.className.includes("B1+")) {
+            cefrSpan.className = cefrSpan.className.replace("B1+", "B1plus");
+        }
+
+        // Hide clozeSentence div if not mobile
+        if (!isMobile()) {
+            document.getElementById('clozeSentence').style.display = 'none';
+        }
+    });
+
     var contentDiv = document.getElementById('content');
 
     function setContent(contentId, alignment) {
         var contentElement = document.getElementById(contentId);
         contentDiv.innerHTML = contentElement.innerHTML;
-        contentDiv.style.display = 'block';
+        contentDiv.style.display = (contentDiv.style.display == 'none') ? 'block': 'none';
         contentDiv.style.textAlign = alignment;
     }
 
-    var translateButton = document.getElementById('translateButton');
-    var noteButton = document.getElementById('noteButton');
-
     // When the translate button is clicked, display the translation.
+    var translateButton = document.getElementById('translateButton');
     if (translateButton) {
         translateButton.onclick = function () {
             setContent('translation', 'center');
@@ -42,6 +53,7 @@
     }
 
     // When the note button is clicked, display the note.
+    var noteButton = document.getElementById('noteButton');
     if (noteButton) {
         noteButton.onclick = function () {
             setContent('note', 'left');

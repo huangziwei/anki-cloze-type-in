@@ -10,7 +10,9 @@
 <br />
 
 <button id="translateButton">Translate</button>
-<div id="translation" class="translation" style="display: none;">{{Translation}}</div>
+<div id="translation" style="display: none;">{{Translation}}</div>
+
+<div id="content" style="display: none;"></div>
 
 <script>
 
@@ -26,22 +28,21 @@
         }
     });
 
-    document.getElementById('translateButton').onclick = function () {
-        var translation = document.getElementById('translation');
-        translation.style.display = (translation.style.display == 'none') ? 'block' : 'none';
-    };
+    var contentDiv = document.getElementById('content');
 
-    var typeInput = document.querySelector('input[type="text"]');
-    var answerLength = "{{Word}}".length;
-    typeInput.style.width = answerLength + "ch";
+    function setContent(contentId, alignment) {
+        var contentElement = document.getElementById(contentId);
+        contentDiv.innerHTML = contentElement.innerHTML;
+        contentDiv.style.display = (contentDiv.style.display == 'none') ? 'block': 'none';
+        contentDiv.style.textAlign = alignment;
+    }
 
-    typeInput.addEventListener('input', function (e) {
-        var typed = e.target.value;
-        var answer = "{{cloze:Sentence}}";
-
-        if (typed.toLowerCase() === answer.toLowerCase()) {
-            e.target.value = answer;
-        }
-    });
+    // When the translate button is clicked, display the translation.
+    var translateButton = document.getElementById('translateButton');
+    if (translateButton) {
+        translateButton.onclick = function () {
+            setContent('translation', 'center');
+        };
+    }
 
 </script>
